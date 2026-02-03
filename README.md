@@ -1,0 +1,2 @@
+# Guardian-News-Classifier-Multinomial-NB-vs.-Logistic-Regression-with-BoW-TF-IDF
+This repository explores supervised machine learning techniques to classify article extracts from The Guardian. The project evaluates two different feature extraction methods—Bag of Words (BoW) and Term Frequency-Inverse Document Frequency (TF-IDF)—across two robust classification models: Multinomial Naive Bayes and Multinomial Logistic Regression.
