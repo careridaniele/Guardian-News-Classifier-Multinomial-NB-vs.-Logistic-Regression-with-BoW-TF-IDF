@@ -12,7 +12,7 @@ Before running the project, please install the dependencies listed in the requir
 pip install -r requirements.txt
 ```
 
-Note: Ensure you are using a compatible Python version (3.8+ recommended).
+Note: Ensure you are using a compatible Python version (3.13 recommended).
 
 ## GPU Support
 This project supports GPU acceleration. If you are using a **Linux system**, you may need to configure your CUDA environment or modify specific library paths to ensure the GPU is utilized correctly.
