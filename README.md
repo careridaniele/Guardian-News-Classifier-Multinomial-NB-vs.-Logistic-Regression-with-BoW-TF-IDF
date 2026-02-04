@@ -66,3 +66,30 @@ The project follows a standard NLP pipeline to transform raw Guardian text into 
 **Multinomial Naive Bayes**: A fast, baseline probabilistic classifier.
 
 **Multinomial Logistic Regression**: A discriminative model that uses the Softmax function for multi-class prediction.
+
+## Using the model
+To use the model, open main.py and replace the text variable with the content you want to evaluate:
+
+```bash
+text = ["Your custom article"]
+```
+
+Next, load the model by specifying the correct path:
+
+```bash
+model = load(path)
+```
+Finally, choose whether to run inference using tokens or lemmas:
+
+```bash
+print(model.use(token))
+```
+
+## Using a Transformer Model for Text Vectorization (Optional)
+For better vectorization results, you can use the Transformer-based model (en_core_web_trf). Note: This requires additional installation steps (see previous instructions).
+
+```bash
+preprocessor = Text_Preprocessor(text, model="en_core_web_trf")
+```
+
+
