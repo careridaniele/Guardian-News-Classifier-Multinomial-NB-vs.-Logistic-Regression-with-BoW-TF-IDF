@@ -1,0 +1,12 @@
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl#sha256=1932429db727d4bff3deed6b34cfc05df17794f4a52eeb26cf8928f7c1a0fb85
+joblib==1.5.3
+matplotlib==3.10.8
+numpy==2.4.2
+pandas==3.0.0
+pyarrow==23.0.0
+regex==2026.1.15
+requests==2.32.5
+scikit-learn==1.8.0
+scipy==1.17.0
+spacy==3.8.11
+torch==2.10.0

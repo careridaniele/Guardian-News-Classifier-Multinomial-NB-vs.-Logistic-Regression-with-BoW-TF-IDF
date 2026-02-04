@@ -1,9 +1,6 @@
-import torch as trc
 from spacy.language import Language
 import spacy
 import re
-
-trc.set_num_threads(1)
 
 @Language.component("smart_entity_merger")
 def __smart_entity_merger(doc):
@@ -21,7 +18,7 @@ def __smart_entity_merger(doc):
     return doc
 
 class Text_Preprocessor:
-    def __init__(self, text_list, model="en_core_web_trf", show_process:bool = False, use_gpu:bool = False, processor_number:int=-1, batch_size:int=20):
+    def __init__(self, text_list, model="en_core_web_sm", show_process:bool = False, use_gpu:bool = False, processor_number:int=-1, batch_size:int=20):
         self.__raw_text = text_list
         self.__clean_text_list = []
         self.__processed_tokens = []
@@ -29,7 +26,10 @@ class Text_Preprocessor:
         self.__show_process = show_process
         self.__processor_number = processor_number
         self.__batch_size = batch_size
-        if use_gpu: spacy.require_gpu()
+        if use_gpu: 
+            import torch as trc
+            trc.set_num_threads(1)
+            spacy.require_gpu()
         if self.__show_process: print(f"Loading model: {model}...")
         self.__nlp = spacy.load(model)
         if "smart_entity_merger" not in self.__nlp.pipe_names: self.__nlp.add_pipe("smart_entity_merger", after="ner")

@@ -69,4 +69,4 @@ if __name__ == "__main__":
     df = pd.read_parquet("Test/All-100-Article-preprocessed.parquet")
     tester = Tester("Model")
     tester.exec()
-    tester.save_result("/home/admin/Studio/NLP/Progetto")
+    tester.save_result("")
