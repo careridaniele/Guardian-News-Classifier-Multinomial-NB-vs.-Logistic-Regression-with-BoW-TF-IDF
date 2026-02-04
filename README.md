@@ -15,7 +15,30 @@ pip install -r requirements.txt
 Note: Ensure you are using a compatible Python version (3.13 recommended).
 
 ## GPU Support
-This project supports GPU acceleration. If you are using a **Linux system**, you may need to configure your CUDA environment or modify specific library paths to ensure the GPU is utilized correctly.
+This project supports hardware acceleration via GPU. To maximize performance during text processing and model inference, please follow the guidelines below.
+### 1. Requirements
+To enable GPU support, ensure you have the following versions installed:
+
+    PyTorch: 2.10.0 (with CUDA support)
+
+    spaCy: 3.8.11
+
+### 2. Installation
+For superior tokenization and better overall performance, i recommend using the Transformer-based model (en_core_web_trf).
+
+```bash
+pip install torch==2.10.0
+```
+
+```bash
+python -m spacy download en_core_web_trf
+```
+
+You can enable GPU acceleration and specify the high-performance model by passing the useGpu and model parameters to the relevant classes (e.g., TextPreprocessor). 
+
+    Text_Preprocessor(text, use_gpu=True, model="en_core_web_trf")
+
+Note: If you are using a **Linux system**, you may need to configure your CUDA environment or modify specific library paths to ensure the GPU is utilized correctly.
 
 ## 📂 Resources & Downloads
 
